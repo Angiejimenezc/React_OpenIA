@@ -13,30 +13,21 @@ export const DashboardLayout = () => {
         <div className="border-gray-700 border my-3" />
 
         {/* Opciones del menú */}
-        {menuRoutes.map((optiom) => (
+        {menuRoutes.map((option) => (
           <NavLink
-            to={optiom.to}
-            key={optiom.to}
-            /* key={optiom.to}
-            to={optiom.to} */
+            to={option.to}
+            key={option.to}
             className={({ isActive }) =>
               isActive
                 ? "flex justify-center items-center bg-gray-800 rounded-md p-2 transition-colors"
                 : "flex justify-center items-center hover:bg-gray-800 rounded-md p-2 transition-colors"
             }
           >
-            <i className={`${optiom.icon} text-2xl mr-4text-indigo-400`} />
+            <i className={`${option.icon} text-2xl mr-4 text-indigo-400`} />
           </NavLink>
         ))}
       </nav>
-
-      <section className="mx-3 sm:mx-20 flex flex-col w-full h-[calc(100vh-50px)]  bg-white bg-opacity-10 p-5 rounded-3xl">
-        <div className="flex flex-row h-full">
-          <div className="flex flex-col flex-auto h-full p-1">
-            <Outlet />
-          </div>
-        </div>
-      </section>
+      <Outlet />
     </main>
   );
 };
